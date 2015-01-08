@@ -40,3 +40,6 @@ LineLength:
 
 ClassAndModuleChildren:
   Enabled: false
+
+AbcSize:
+  Max: 20
