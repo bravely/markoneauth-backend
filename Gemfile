@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
 gem 'pg'
-gem 'unicorn-rails'
 gem 'active_model_serializers'
 gem 'dotenv-rails'
 gem 'devise'
