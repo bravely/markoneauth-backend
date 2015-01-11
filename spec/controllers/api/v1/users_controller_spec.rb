@@ -21,7 +21,29 @@ RSpec.describe Api::V1::UsersController, type: :controller do
   end
 
   describe 'POST :create' do
-    before do
+    let(:email) { Faker::Internet.email }
+    context 'with valid params' do
+      before do
+        post :create, user: {
+          email: email,
+          password: 'markonewoo',
+          password_confirmation: 'markonewoo'
+        }, format: :json
+      end
+      it { should respond_with :ok }
+      it { expect(response.content_type).to eq 'application/json' }
+      it { expect(User.find_by_email(email)).to exist_in_database }
+    end
+    context 'with invalid params' do
+      before do
+        post :create, user: {
+          email: email,
+          password: 'mark',
+          password_confirmation: 'mark'
+        }, format: :json
+      end
+      it { should respond_with :bad_request }
+      it { expect(response.content_type).to eq 'application/json' }
     end
   end
 end
