@@ -14,8 +14,8 @@ RSpec.describe SessionsController, type: :controller do
     it { expect(response.status).to eq 201 }
     it 'sends the expected data' do
       data = {
-        user_email: user.email,
-        user_token: user.authentication_token
+        token: user.authentication_token,
+        user_email: user.email
       }
       expect(assigns(:data)).to eq data
     end
