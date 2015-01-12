@@ -8,12 +8,12 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(sign_up_params)
+    @user = User.create(sign_up_params)
 
     if @user.save
       render json: @user
     else
-      render json: { errors: @user.errors.messages }, status: 400
+      render json: { errors: @user.errors.messages }, status: 422
     end
   end
 

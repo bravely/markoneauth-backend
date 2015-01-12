@@ -42,7 +42,7 @@ RSpec.describe Api::V1::UsersController, type: :controller do
           password_confirmation: 'mark'
         }, format: :json
       end
-      it { should respond_with :bad_request }
+      it { should respond_with :unprocessable_entity }
       it { expect(response.content_type).to eq 'application/json' }
     end
   end
