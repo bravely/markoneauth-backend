@@ -16,6 +16,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'faker'
   gem 'fuubar'
+  gem 'mailcatcher'
 end
 
 group :test do
