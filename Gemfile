@@ -17,6 +17,7 @@ group :development, :test do
   gem 'faker'
   gem 'fuubar'
   gem 'mailcatcher'
+  gem 'bundler-audit'
 end
 
 group :test do
@@ -24,7 +25,6 @@ group :test do
   gem 'simplecov', require: false
   gem 'webrat'
   gem 'should_not'
-  gem 'bundler-audit'
 end
 
 group :ct do
